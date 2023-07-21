@@ -1,3 +1,5 @@
+import { Farmer, FarmerUpgrade } from './FarmerTypes'
+
 const name = [
   'Brad Pitiful',
   'Angelina Jolieous',
@@ -57,7 +59,7 @@ function getRandomFloat(min: number, max: number) {
   return Math.random() * (max - min) + min
 }
 
-const upgrades = [
+const upgrades: FarmerUpgrade[] = [
   {
     id: 1,
     name: 'Automated Irrigation System',
@@ -143,11 +145,12 @@ const upgrades = [
   }
 ]
 
-export const farmersToUnlockStock = name.map((name, index) => ({
+export const farmersToUnlockStock: Farmer[] = name.map((name, index) => ({
   id: index + 1,
   name: name,
   level: 1,
   volumeMargin: getRandomFloat(1, 5),
   sellingMargin: getRandomFloat(1, 5),
-  plantId: 1
+  plantId: 1,
+  upgrades: upgrades
 }))

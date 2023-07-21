@@ -12,3 +12,8 @@ export const productionRateMultiplier = (upgrades: PlantUpgrade[]): number => {
 export const hasEnoughMoney = (money: number, cost: number): boolean => {
   return money >= cost
 }
+
+export const showUpgrade = (cash: number, price: number): boolean => {
+  const threshold = 0.8 // 80% threshold
+  return cash >= threshold * price
+}

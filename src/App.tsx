@@ -1,24 +1,34 @@
-import React, { ReactElement } from 'react'
-import { FarmerStoreProvider } from './Controllers/Farmer/FarmerStoreProvider'
-import { PlantStoreProvider } from './Controllers/Plants/PlantStoreProvider'
-import { GameStoreProvider } from './Controllers/Game/GameStoreProvider'
-import { Section } from './Components/Section'
+import React, { ReactElement, useState } from 'react'
+import { NavigationBar } from './Components/NavigationBar'
+import { FarmerStoreProvider } from './Modules/Farmer/FarmerStoreProvider'
+import { PlantStoreProvider } from './Modules/Plants/PlantStoreProvider'
+import { GameStoreProvider } from './Modules/Game/GameStoreProvider'
+import { ReputationStoreProvider } from './Modules/Reputation/ReputationStoreProvider'
 import { TopBar } from './Components/TopBar'
-import { SectionPlants } from './Controllers/Plants/SectionPlants'
-import { SectionFarmer } from './Controllers/Farmer/SectionFarmer'
+import { SectionPlants } from './Modules/Plants/SectionPlants'
+import { SectionFarmer } from './Modules/Farmer/SectionFarmer'
+import { SectionReputation } from './Modules/Reputation/SectionReputation'
+
+type TabOptions = 'plants' | 'farmers' | 'reputation'
 
 function App(): ReactElement {
+  const [currentTab, setCurrentTab] = useState<TabOptions>('farmers')
+
   return (
     <div>
       <GameStoreProvider>
         <PlantStoreProvider>
           <FarmerStoreProvider>
-            <TopBar />
-            <div className="relative top-14 left-0 right-0 bottom-0 w-full flex justify-between px-8 py-4">
-              <SectionPlants />
-              <SectionFarmer />
-              <Section title="Reputation" />
-            </div>
+            <ReputationStoreProvider>
+              <TopBar />
+              <NavigationBar
+                currentTab={currentTab}
+                setCurrentTab={(tab) => setCurrentTab(tab)}
+              />
+              {currentTab === 'plants' && <SectionPlants />}
+              {currentTab === 'farmers' && <SectionFarmer />}
+              {currentTab === 'reputation' && <SectionReputation />}
+            </ReputationStoreProvider>
           </FarmerStoreProvider>
         </PlantStoreProvider>
       </GameStoreProvider>

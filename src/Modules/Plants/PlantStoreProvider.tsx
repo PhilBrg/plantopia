@@ -1,10 +1,18 @@
 import { plantsToUnlockStock } from './PlantsToUnlock'
+import {
+  convertObjectToDataString,
+  convertDataStringToObject,
+  saveData,
+  loadData,
+  clearData
+} from '@/Tools/SaveGameTool'
 import React, { createContext, useState, FC } from 'react'
 
 export type Plant = {
   id: number
   level: number
   name: string
+  imgUrl: string
   basePrice: number
   costToUnlock: number
   sellingPrice: number
@@ -28,6 +36,8 @@ export type PlantStoreContextValue = {
   addNewPlant: (plantToUnlockId: number) => void
   upgradePlant: (plantId: number, upgradeId: number) => void
   updateStock: (plantId: number, stock: number) => void
+  savePlants: () => void
+  clearPlants: () => void
 }
 
 export const PlantStoreContext = createContext<PlantStoreContextValue | null>(
@@ -35,36 +45,27 @@ export const PlantStoreContext = createContext<PlantStoreContextValue | null>(
 )
 
 export const PlantStoreProvider: FC = ({ children }) => {
-  const [plantsToUnlock, setPlantsToUnlock] =
-    useState<Plant[]>(plantsToUnlockStock)
-  const [plants, setPlants] = useState<Plant[]>([
-    {
-      id: 1,
-      name: 'Sunflower',
-      level: 1,
-      basePrice: 10,
-      sellingPrice: 3,
-      productionRate: 0,
-      costToUnlock: 100,
-      stock: 0,
-      upgrades: [
-        {
-          id: 1,
-          name: 'Fertilizer',
-          basePrice: 250,
-          productionRate: 1.2,
-          isEnabled: false
-        },
-        {
-          id: 2,
-          name: 'Irrigation',
-          basePrice: 1000,
-          productionRate: 1.5,
-          isEnabled: false
-        }
-      ]
-    }
-  ])
+  const [plantsToUnlock, setPlantsToUnlock] = useState<Plant[]>(
+    loadData('plantStoreToUnlock') || plantsToUnlockStock
+  )
+
+  const [plants, setPlants] = useState<Plant[]>(
+    convertDataStringToObject(loadData('plantStore')) || []
+  )
+
+  const savePlants = () => {
+    const plantStore = convertObjectToDataString(plants)
+    const plantStoreToUnlock = convertObjectToDataString(plantsToUnlock)
+    saveData('plantStore', plantStore)
+    saveData('plantStoreToUnlock', plantStoreToUnlock)
+  }
+
+  const clearPlants = () => {
+    clearData('plantStore')
+    clearData('plantStoreToUnlock')
+    setPlants([])
+    setPlantsToUnlock(plantsToUnlockStock)
+  }
 
   const addNewPlant = (plantToUnlockId: number) => {
     setPlants((prevPlants) => {
@@ -134,7 +135,9 @@ export const PlantStoreProvider: FC = ({ children }) => {
     <PlantStoreContext.Provider
       value={{
         plants,
+        clearPlants,
         levelUpPlant,
+        savePlants,
         addNewPlant,
         plantsToUnlock,
         updateStock,

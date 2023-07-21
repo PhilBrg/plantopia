@@ -17,3 +17,12 @@ export const formatNumber = (number: number): string => {
 
   return `${formattedNumber}${suffix}`
 }
+
+export const convertToPercentage = (value: number): string => {
+  if (value >= 1) {
+    const percentageValue = (value - 1) * 100
+    return percentageValue.toFixed(2) + '%'
+  } else {
+    throw new Error('Value must be greater than or equal to 1.')
+  }
+}

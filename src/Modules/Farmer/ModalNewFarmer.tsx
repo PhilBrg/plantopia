@@ -1,4 +1,4 @@
-import { Farmer } from '@/Controllers/Farmer/FarmerStoreProvider'
+import { Farmer } from '@/Modules/Farmer/FarmerStoreProvider'
 import { Modal } from '@Components/Modal'
 import { CardHiredFarmer } from './CardHiredFarmer'
 import { useEffect, useState } from 'react'
