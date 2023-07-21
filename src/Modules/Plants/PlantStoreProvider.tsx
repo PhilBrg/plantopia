@@ -46,11 +46,15 @@ export const PlantStoreContext = createContext<PlantStoreContextValue | null>(
 
 export const PlantStoreProvider: FC = ({ children }) => {
   const [plantsToUnlock, setPlantsToUnlock] = useState<Plant[]>(
-    loadData('plantStoreToUnlock') || plantsToUnlockStock
+    loadData('plantStoreToUnlock') === null
+      ? plantsToUnlockStock
+      : convertDataStringToObject(loadData('plantStoreToUnlock'))
   )
 
   const [plants, setPlants] = useState<Plant[]>(
-    convertDataStringToObject(loadData('plantStore')) || []
+    loadData('plantStore') === null
+      ? []
+      : convertDataStringToObject(loadData('plantStore'))
   )
 
   const savePlants = () => {

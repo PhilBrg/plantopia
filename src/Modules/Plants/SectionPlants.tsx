@@ -92,7 +92,7 @@ export const SectionPlants = () => {
             )}
           </header>
 
-          <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-3s">
             {plants &&
               plants.map((plant: Plant, index: number) => (
                 <li key={index}>

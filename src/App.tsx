@@ -12,7 +12,7 @@ import { SectionReputation } from './Modules/Reputation/SectionReputation'
 type TabOptions = 'plants' | 'farmers' | 'reputation'
 
 function App(): ReactElement {
-  const [currentTab, setCurrentTab] = useState<TabOptions>('farmers')
+  const [currentTab, setCurrentTab] = useState<TabOptions>('plants')
 
   return (
     <div>

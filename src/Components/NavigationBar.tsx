@@ -80,11 +80,12 @@ export const NavigationBar = ({
   return (
     <nav
       aria-label="Tabs"
-      className="flex border-b border-gray-100 text-sm font-medium px-4 sm:px-6 lg:px-8"
+      className="flex justify-between border-b border-gray-100 text-sm font-medium px-4 sm:px-6 lg:px-8"
     >
-      <span
-        onClick={() => setCurrentTab('plants')}
-        className={`
+      <div className="flex">
+        <span
+          onClick={() => setCurrentTab('plants')}
+          className={`
                   -mb-px
                   border-b
                   cursor-pointer
@@ -95,13 +96,13 @@ export const NavigationBar = ({
                       : 'border-transparent hover:text-cyan-500'
                   }
                 `}
-      >
-        Plants
-      </span>
+        >
+          Plants
+        </span>
 
-      <span
-        onClick={() => setCurrentTab('farmers')}
-        className={`
+        <span
+          onClick={() => setCurrentTab('farmers')}
+          className={`
                   -mb-px
                   border-b
                   cursor-pointer
@@ -112,13 +113,13 @@ export const NavigationBar = ({
                       : 'border-transparent hover:text-cyan-500'
                   }
                 `}
-      >
-        Farmer
-      </span>
+        >
+          Farmer
+        </span>
 
-      <span
-        onClick={() => setCurrentTab('reputation')}
-        className={`
+        <span
+          onClick={() => setCurrentTab('reputation')}
+          className={`
                   -mb-px
                   border-b
                   cursor-pointer
@@ -129,12 +130,14 @@ export const NavigationBar = ({
                       : 'border-transparent hover:text-cyan-500'
                   }
                 `}
-      >
-        Reputation
-      </span>
-      <span
-        onClick={() => handleSaveGame()}
-        className={`
+        >
+          Reputation
+        </span>
+      </div>
+      <div className="flex">
+        <span
+          onClick={() => handleSaveGame()}
+          className={`
                   -mb-px
                   border-b
                   cursor-pointer
@@ -143,12 +146,12 @@ export const NavigationBar = ({
                 hover:text-cyan-500
                   }
                 `}
-      >
-        Save Game
-      </span>
-      <span
-        onClick={() => handleClearData()}
-        className={`
+        >
+          Save Game
+        </span>
+        <span
+          onClick={() => handleClearData()}
+          className={`
                   -mb-px
                   border-b
                   cursor-pointer
@@ -158,9 +161,10 @@ export const NavigationBar = ({
                 hover:text-ref-500
                   }
                 `}
-      >
-        Clear Data
-      </span>
+        >
+          Clear Data
+        </span>
+      </div>
     </nav>
   )
 }
