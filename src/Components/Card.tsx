@@ -1,5 +1,4 @@
 import { formatNumber } from '@Tools/number-tools'
-import { useState } from 'react'
 
 type CardProps = {
   title: string

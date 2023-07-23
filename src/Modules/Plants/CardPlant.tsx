@@ -1,5 +1,3 @@
-import { BuyButton } from '../../Components/BuyButton'
-import { UpgradeButton } from '../../Components/UpgradeButton'
 import { formatNumber } from '../../Tools/number-tools'
 import {
   GameStoreContextValue,
@@ -44,7 +42,7 @@ export const CardPlant = ({
   const gameStoreContext = React.useContext<GameStoreContextValue | null>(
     GameStoreContext
   )
-  const { cash, maxCash } = gameStoreContext as GameStoreContextValue
+  const { cash } = gameStoreContext as GameStoreContextValue
 
   const productionRate = productionRateMultiplier(plantItem.upgrades)
 

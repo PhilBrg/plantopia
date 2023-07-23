@@ -26,3 +26,11 @@ export const convertToPercentage = (value: number): string => {
     throw new Error('Value must be greater than or equal to 1.')
   }
 }
+
+export const roundToLower = (value: number): number => {
+  return Math.floor(value)
+}
+
+export const extractDecimal = (value: number): number => {
+  return value - Math.floor(value)
+}

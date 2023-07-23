@@ -1,4 +1,4 @@
-export const convertObjectToDataString = (object: any) => {
+export const convertObjectToDataString = (object: unknown) => {
   const dataString = JSON.stringify(object)
   return dataString
 }
@@ -18,5 +18,5 @@ export const loadData = (dataKey: string) => {
 }
 
 export const clearData = (dataKey: string) => {
-    localStorage.removeItem(dataKey)
+  localStorage.removeItem(dataKey)
 }

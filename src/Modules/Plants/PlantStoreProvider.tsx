@@ -53,7 +53,36 @@ export const PlantStoreProvider: FC = ({ children }) => {
 
   const [plants, setPlants] = useState<Plant[]>(
     loadData('plantStore') === null
-      ? []
+      ? [
+          {
+            id: 1,
+            name: 'Sunflower',
+            imgUrl:
+              'https://thumbs.dreamstime.com/z/three-sunflower-19926958.jpg?w=576',
+            level: 1,
+            basePrice: 10,
+            sellingPrice: 3,
+            productionRate: 0,
+            costToUnlock: 0,
+            stock: 0,
+            upgrades: [
+              {
+                id: 1,
+                name: 'Fertilizer',
+                basePrice: 250,
+                productionRate: 1.2,
+                isEnabled: false
+              },
+              {
+                id: 2,
+                name: 'Irrigation',
+                basePrice: 1000,
+                productionRate: 1.5,
+                isEnabled: false
+              }
+            ]
+          }
+        ]
       : convertDataStringToObject(loadData('plantStore'))
   )
 
@@ -67,7 +96,36 @@ export const PlantStoreProvider: FC = ({ children }) => {
   const clearPlants = () => {
     clearData('plantStore')
     clearData('plantStoreToUnlock')
-    setPlants([])
+    setPlants([
+      {
+        id: 1,
+        name: 'Sunflower',
+        imgUrl:
+          'https://thumbs.dreamstime.com/z/three-sunflower-19926958.jpg?w=576',
+        level: 1,
+        basePrice: 10,
+        sellingPrice: 3,
+        productionRate: 0,
+        costToUnlock: 0,
+        stock: 0,
+        upgrades: [
+          {
+            id: 1,
+            name: 'Fertilizer',
+            basePrice: 250,
+            productionRate: 1.2,
+            isEnabled: false
+          },
+          {
+            id: 2,
+            name: 'Irrigation',
+            basePrice: 1000,
+            productionRate: 1.5,
+            isEnabled: false
+          }
+        ]
+      }
+    ])
     setPlantsToUnlock(plantsToUnlockStock)
   }
 

@@ -1,9 +1,11 @@
 import { Farmer } from '@/Modules/Farmer/FarmerTypes'
 import { Plant } from '@/Modules/Plants/PlantStoreProvider'
-import { formatNumber } from '../../Tools/number-tools'
+import {
+  formatNumber,
+  extractDecimal,
+  roundToLower
+} from '../../Tools/number-tools'
 import Select from 'react-select'
-import { Card } from '../../Components/Card'
-import React from 'react'
 
 type CardFarmerProps = {
   farmer: Farmer
@@ -32,7 +34,7 @@ export const CardFarmer = ({
     label: plant.name
   }))
 
-  const handleChangePlant = (plant: any) => {
+  const handleChangePlant = (plant: Plant) => {
     onClickChangePlantId(farmer.id, plant.value)
   }
 
@@ -49,9 +51,21 @@ export const CardFarmer = ({
         <h1 className="my-1 text-center text-xl font-bold leading-8 text-gray-900">
           {farmer.name}
         </h1>
-        <h3 className="font-lg text-semibold text-center leading-6 text-gray-600 mb-4">
-          Farmer level {farmer.level}
+        <h3 className="font-lg text-semibold text-center leading-6 text-gray-600 mb-2">
+          Farmer level {roundToLower(farmer.level)}
         </h3>
+        <div className="flex w-full h-1.5 mb-4 bg-green-200 rounded-full overflow-hidden dark:bg-green-700">
+          <div
+            className="flex flex-col justify-center overflow-hidden bg-green-500"
+            role="progressbar"
+            style={{
+              width: (extractDecimal(farmer.level) / 1) * 100 + '%'
+            }}
+            aria-valuenow={extractDecimal(farmer.level)}
+            aria-valuemin={0}
+            aria-valuemax={1}
+          />
+        </div>
         <Select
           className="basic-singl  mb-2 w-full"
           menuPortalTarget={document.body}

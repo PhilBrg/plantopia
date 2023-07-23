@@ -9,7 +9,6 @@ import {
 } from '@/Modules/Reputation/ReputationStoreProvider'
 import { CardReputation } from '@/Modules/Reputation/CardReputation'
 import React from 'react'
-import { Button } from '@Components/Button'
 import { UnlockButton } from '@Components/UnlockButton'
 import { formatNumber } from '@Tools/number-tools'
 import { hasEnoughMoney, showUpgrade } from '@Tools/game-tools'

@@ -125,9 +125,7 @@ export const FarmerStoreProvider: FC = ({ children }) => {
         farmer.id === farmerId
           ? {
               ...farmer,
-              level: farmer.level + 1,
-              volumeMargin: farmer.volumeMargin * 1.1,
-              sellingMargin: farmer.sellingMargin * 1.1
+              level: farmer.level + 0.0001
             }
           : farmer
       )

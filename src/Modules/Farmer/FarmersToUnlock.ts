@@ -2,55 +2,37 @@ import { Farmer, FarmerUpgrade } from './FarmerTypes'
 
 const name = [
   'Brad Pitiful',
-  'Angelina Jolieous',
   'Tom Cranks',
   'Will Fighting',
-  'Jennifer Laughrence',
-  'Johnny Deppressed',
-  "Scarlet O'Hara-oke",
   'Beyonse',
   'Kanye Nest',
   'Emma Stoned',
-  'Robert Downer Jr.',
   'Meryl Streak',
   'Justin Beaver',
   'Lady Gaggle',
-  'Leonardo DiCapricorn',
-  'Kim Card-assassin',
   'Julia Boberts',
-  'Daniel Drool-Lewis',
   'Oprah Windbag',
   'Nicolas Cagey',
   'Harry Blotter',
   'Madonna Fries',
   'George Cloney',
-  'Anne HathawayWithWords',
   'Snoop Doggy Pug',
   'Taylor Swiftkick',
-  "Dwayne 'The Sock' Johnson",
   'Tina Fey-ve',
   'Ellen DeGenerous',
   'Jay-Zebra',
   'Barack Ollama',
   'Emma Wat-Son',
-  'Sandra Bullockhead',
   'Bradley Coopurr',
   'Cameron Diaper',
-  'Bruce Spring-clean',
   'Jackie Chaotic',
   'Ryan Goofling',
   'Michelle Obummer',
-  'Arnold Schwarze-noodle',
   'Johnny Deep-Fry',
-  'Miley Cyrus the Virus',
   'Matt Demon',
-  'Megan Fox-in-Socks',
   'Tom Hanksy-Panksy',
   'Emma Stone-cold',
-  'Robert Downy Jrunk',
-  'Jennifer Anis-turn',
   'Hugh Jacked-man',
-  'Cristiano Ronaldough',
   'Julia Robertsaw',
   'Denzel Washed-up'
 ]
@@ -69,7 +51,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0.2,
     sellingMarginRate: 0,
     effect: 'Increase volume margin by 20%.',
-    isActive: false,
+    isActive: false
   },
   {
     id: 2,
@@ -79,7 +61,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0.25,
     sellingMarginRate: 0,
     effect: 'Increase volume margin by 25%.',
-    isActive: false,
+    isActive: false
   },
   {
     id: 3,
@@ -89,7 +71,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0,
     sellingMarginRate: 0.3,
     effect: 'Increase selling margin by 30%.',
-    isActive: false,
+    isActive: false
   },
   {
     id: 4,
@@ -100,7 +82,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0,
     sellingMarginRate: 0.2,
     effect: 'Increase selling margin by 20%.',
-    isActive: false,
+    isActive: false
   },
   {
     id: 5,
@@ -111,7 +93,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0.3,
     sellingMarginRate: 0,
     effect: 'Increase volume margin by 30%.',
-    isActive: false,
+    isActive: false
   },
   {
     id: 6,
@@ -121,7 +103,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0.5,
     sellingMarginRate: 0,
     effect: 'Increase volume margin by 50%.',
-    isActive: false,
+    isActive: false
   },
   {
     id: 7,
@@ -131,7 +113,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0.3,
     sellingMarginRate: 0.3,
     effect: 'Increase volume and selling margin by 30%.',
-    isActive: false,
+    isActive: false
   },
   {
     id: 8,
@@ -141,7 +123,7 @@ const upgrades: FarmerUpgrade[] = [
     volumeMarginRate: 0.5,
     sellingMarginRate: 0.5,
     effect: 'Increase volume and selling margin by 50%.',
-    isActive: false,
+    isActive: false
   }
 ]
 

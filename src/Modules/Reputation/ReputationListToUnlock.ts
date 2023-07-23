@@ -2,7 +2,8 @@ export const reputationListStock = [
   {
     id: 1,
     name: 'Local reseller',
-    imgUrl: 'https://thumbs.dreamstime.com/z/small-farm-house-24467803.jpg?w=992',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/small-farm-house-24467803.jpg?w=992',
     count: 0,
     reputation: 1,
     basePrice: 10,
@@ -12,7 +13,8 @@ export const reputationListStock = [
   {
     id: 2,
     name: 'Regional Supermarket',
-    imgUrl: 'https://thumbs.dreamstime.com/z/lidl-shop-vienna-austria-july-large-german-grocery-store-chain-near-designer-outlet-parndorf-vienna-austria-july-exterior-62366851.jpg?w=992',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/lidl-shop-vienna-austria-july-large-german-grocery-store-chain-near-designer-outlet-parndorf-vienna-austria-july-exterior-62366851.jpg?w=992',
     reputation: 5,
     count: 0,
     basePrice: 1000,
@@ -22,7 +24,8 @@ export const reputationListStock = [
   {
     id: 3,
     name: 'National Supermarket',
-    imgUrl: 'https://thumbs.dreamstime.com/z/irving-tx-us-apr-exterior-facade-whole-foods-market-store-eco-minded-supermarket-chain-featuring-foods-artificial-113770875.jpg?w=768',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/irving-tx-us-apr-exterior-facade-whole-foods-market-store-eco-minded-supermarket-chain-featuring-foods-artificial-113770875.jpg?w=768',
     reputation: 75,
     count: 0,
     basePrice: 10000,
@@ -32,7 +35,8 @@ export const reputationListStock = [
   {
     id: 4,
     name: 'Continental Distribution',
-    imgUrl: 'https://thumbs.dreamstime.com/z/novi-michigan-usa-august-walmart-sign-store-exterior-american-large-retail-corporation-operates-discount-stores-across-238021011.jpg?w=768',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/novi-michigan-usa-august-walmart-sign-store-exterior-american-large-retail-corporation-operates-discount-stores-across-238021011.jpg?w=768',
     reputation: 500,
     count: 0,
     basePrice: 50000,
@@ -42,7 +46,8 @@ export const reputationListStock = [
   {
     id: 5,
     name: 'Global Export',
-    imgUrl: 'https://thumbs.dreamstime.com/z/china-qingdao-port-container-terminal-29000630.jpg?w=992',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/china-qingdao-port-container-terminal-29000630.jpg?w=992',
     reputation: 2000,
     count: 0,
     basePrice: 100000,
@@ -52,7 +57,8 @@ export const reputationListStock = [
   {
     id: 6,
     name: 'Interplanetary Expansion',
-    imgUrl: 'https://thumbs.dreamstime.com/z/radio-telescope-22507834.jpg?w=768',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/radio-telescope-22507834.jpg?w=768',
     reputation: 10000,
     count: 0,
     basePrice: 500000,
@@ -62,7 +68,8 @@ export const reputationListStock = [
   {
     id: 7,
     name: 'Intergalactic Consortium',
-    imgUrl: 'https://thumbs.dreamstime.com/z/abstract-new-age-space-background-intergalactic-highway-travel-30383061.jpg?w=992',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/abstract-new-age-space-background-intergalactic-highway-travel-30383061.jpg?w=992',
     reputation: 50000,
     count: 0,
     basePrice: 1000000,
@@ -72,7 +79,8 @@ export const reputationListStock = [
   {
     id: 8,
     name: 'Universal Dominion',
-    imgUrl: 'https://thumbs.dreamstime.com/z/alien-cities-scifi-alien-civilization-cities-other-planets-futuristic-surreal-buildings-alien-cities-scifi-alien-civilization-276890577.jpg?w=992',
+    imgUrl:
+      'https://thumbs.dreamstime.com/z/alien-cities-scifi-alien-civilization-cities-other-planets-futuristic-surreal-buildings-alien-cities-scifi-alien-civilization-276890577.jpg?w=992',
     reputation: 100000,
     count: 0,
     basePrice: 5000000,

@@ -24,16 +24,18 @@ export const ModalNewFarmer = ({
 
   return (
     <Modal title="Hire!" onClickCancel={onClickClose}>
-      <div className="flex justify-between items-center mb-4 space-x-2">
+      <ul className="grid gap-2 sm:grid-cols-1 lg:grid-cols-3">
         {farmersToHire &&
-          farmersToHire.map((farmer: Farmer) => (
-            <CardHiredFarmer
-              key={farmer.id}
-              farmer={farmer}
-              onClickHire={onClickHire}
-            />
+          farmersToHire.map((farmer: Farmer, index: number) => (
+            <li key={index}>
+              <CardHiredFarmer
+                key={farmer.id}
+                farmer={farmer}
+                onClickHire={onClickHire}
+              />
+            </li>
           ))}
-      </div>
+      </ul>
     </Modal>
   )
 }

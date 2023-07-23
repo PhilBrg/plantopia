@@ -40,8 +40,7 @@ export const TopBar = () => {
   const { plants, addNewPlant, updateStock } =
     plantStoreContext as PlantStoreContextValue
 
-  const { cash, incrementCash, globalBonusRate } =
-    gameStoreContext as GameStoreContextValue
+  const { cash, incrementCash } = gameStoreContext as GameStoreContextValue
   const {
     globalReduction,
     reputation,
@@ -50,14 +49,17 @@ export const TopBar = () => {
     increaseReputationItem
   } = reputationStoreContext as ReputationStoreContextValue
 
-
-  const { farmers } =
+  const { farmers, levelUpFarmer } =
     React.useContext<FarmerStoreContextValue>(FarmerStoreContext)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       reputationList.forEach((reputationItem: Reputation) => {
         increaseReputation(reputationItem.count * reputationItem.reputation)
+      })
+
+      farmers.forEach((farmer: Farmer) => {
+        levelUpFarmer(farmer.id)
       })
 
       plants.forEach((plant: Plant) => {
