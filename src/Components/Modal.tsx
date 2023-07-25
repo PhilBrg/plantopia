@@ -8,7 +8,7 @@ type ModalProps = {
 
 export const Modal = ({ children, onClickCancel, title }: ModalProps) => {
   useEffect(() => {
-    const closeOnEscapeKey = (e) =>
+    const closeOnEscapeKey = (e: KeyboardEvent) =>
       e.key === 'Escape' ? onClickCancel() : null
     document.body.addEventListener('keydown', closeOnEscapeKey)
     return () => {
